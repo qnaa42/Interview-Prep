@@ -1,11 +1,21 @@
 import Node.TwoWayNode as Node
 
+
 class DoublyLinkedList:
     def __init__(self):
+        """
+        Constructor to initialize a DoublyLinkedList instance.
+        """
         self.head_node = None
         self.tail_node = None
 
     def add_to_head(self, new_value):
+        """
+        Add a new node with the given value to the beginning of the linked list.
+
+        Parameters:
+            new_value: The value to be added to the head of the linked list.
+        """
         new_head = Node(new_value)
         current_head = self.head_node
 
@@ -19,6 +29,12 @@ class DoublyLinkedList:
             self.tail_node = new_head
 
     def add_to_tail(self, new_value):
+        """
+        Add a new node with the given value to the end of the linked list.
+
+        Parameters:
+            new_value: The value to be added to the tail of the linked list.
+        """
         new_tail = Node(new_value)
         current_tail = self.tail_node
 
@@ -32,6 +48,12 @@ class DoublyLinkedList:
             self.head_node = new_tail
 
     def remove_head(self):
+        """
+        Remove and return the value of the node at the head of the linked list.
+
+        Returns:
+            The value of the node removed from the head of the linked list.
+        """
         removed_head = self.head_node
 
         if removed_head == None:
@@ -48,6 +70,12 @@ class DoublyLinkedList:
         return removed_head.get_value()
 
     def remove_tail(self):
+        """
+        Remove and return the value of the node at the tail of the linked list.
+
+        Returns:
+            The value of the node removed from the tail of the linked list.
+        """
         removed_tail = self.tail_node
 
         if removed_tail == None:
@@ -64,6 +92,15 @@ class DoublyLinkedList:
         return removed_tail.get_value()
 
     def remove_by_value(self, value_to_remove):
+        """
+        Remove the first occurrence of a node with the specified value from the linked list.
+
+        Parameters:
+            value_to_remove: The value of the node to be removed.
+
+        Returns:
+            The removed node if found, otherwise None.
+        """
         node_to_remove = None
         current_node = self.head_node
 
@@ -90,6 +127,12 @@ class DoublyLinkedList:
         return node_to_remove
 
     def stringify_list(self):
+        """
+        Convert the linked list to a string representation.
+
+        Returns:
+            str: A string representation of the linked list values.
+        """
         string_list = ""
         current_node = self.head_node
         while current_node:
